@@ -12,9 +12,10 @@ const Navbar = () => {
             <Link href={'/'}>Community</Link>
             <Link href={'/'}>Some</Link>
         </div>
-        <div className='flex gap-4'><Button variant={'default'}>Login</Button>
-        <Button variant={'outline'}>SignUp</Button></div>
-       
+        <div className='flex gap-4'>
+          <Link href={'/login'} ><Button variant={'default'}>Login</Button></Link>
+        <Link href='/login' ><Button variant={'outline'}>SignUp</Button></Link>
+       </div>
     </div>
   )
 }

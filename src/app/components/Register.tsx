@@ -20,7 +20,7 @@ export default function Login(){
             if (response.ok) {
                 const responseData = await response.json();
                 console.log("Success:", responseData);
-                router.push('/')
+                router.push('/homepage')
                 // Handle successful response
             } else {
                 console.error("Error:", response.statusText);

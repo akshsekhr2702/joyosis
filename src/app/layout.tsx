@@ -16,16 +16,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* <ThemeProvider
+      <body>
+      <ThemeProvider
         attribute="class"
         defaultTheme="system"
         enableSystem
         disableTransitionOnChange
-      > */}
-      <body>
+      >
         {children}
+        </ThemeProvider>
       </body>
-      {/* </ThemeProvider> */}
     </html>
   );
 }

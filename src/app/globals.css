@@ -115,7 +115,32 @@
     }
   }
   
-
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 10;
+    display: block;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    margin-top: 5px;
+    min-width: 160px; /* Adjust as needed */
+    list-style-type: none; /* Removes default list styling */
+  }
+  
+  .dropdown-item {
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #f0f0f0;
+  }
+  
   @layer base {
     * {
       @apply border-border;
