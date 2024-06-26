@@ -9,10 +9,13 @@ export async function POST(req,res) {
   if(!email || !password){
     return new NextResponse(JSON.stringify("Something went wrong"),{status:404})
   }
-
   await connectDb()
 
   const isExist = await User.findOne({email})
+
+  if(password === isExist.password){
+    console.log('crt')
+  }
 
   if(isExist){
     return new NextResponse(JSON.stringify("Logined"),{status:404})
