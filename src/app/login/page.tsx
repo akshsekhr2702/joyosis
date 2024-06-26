@@ -1,9 +1,10 @@
 "use client";
-import Login from "../components/login";
+
 import Register from "../components/Register"
 import React, { useState } from "react";
 import './loginstyle.css'
 import { useForm } from "react-hook-form";
+import Login from "../components/Login";
 
 export default function LoginPage() {
     const { register, handleSubmit, reset} = useForm()

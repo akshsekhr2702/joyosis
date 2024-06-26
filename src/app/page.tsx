@@ -1,14 +1,14 @@
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
-import Sidebar from "@/components/Sidebar";
+import Sidebar from "@/components/Sidebar/Sidebar";
 
 export default function Home(){
   return(
     <>
     <Navbar />
     <Hero />
-    <Footer/>
+    <Footer   />
     </>
   );
 

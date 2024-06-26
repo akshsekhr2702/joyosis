@@ -7,7 +7,7 @@ const Navbar = () => {
     <div className='flex flex-row justify-between items-center px-10 py-7'>
         <div className='text-3xl font-bold'>Logo</div>
         <div className='flex justify-center items-center gap-4 text-xl'>
-            <Link href={'/'}>Home</Link>
+            <Link href={'/pages/community'}>Home</Link>
             <Link href={'/'}>About</Link>
             <Link href={'/'}>Community</Link>
             <Link href={'/'}>Some</Link>
