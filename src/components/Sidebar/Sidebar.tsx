@@ -6,6 +6,7 @@ import { Bell, Home, LineChart, LogOut, MessageCircle, Package, Package2, Shoppi
 import Link from 'next/link'
 import { Badge } from '../ui/badge'
 import { ModeToggle } from '../Mode-toggle'
+import { useRouter } from 'next/navigation'
 
 const Sidebar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -13,8 +14,10 @@ const Sidebar = () => {
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
-
-
+  const router = useRouter()
+ const handleVideoClick = function() {
+  router.push("/room/1")
+ }
 
   return (
     <div className='w-96 border-r-2 h-dvh fixed left-0 top-0 bottom-0'>
@@ -95,7 +98,7 @@ const Sidebar = () => {
             <Button>
             <LogOut />LogOut
             </Button>
-            <Button>
+            <Button onClick = {handleVideoClick}>
               Video
             </Button>
           </div>
