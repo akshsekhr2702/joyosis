@@ -9,8 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+<<<<<<< HEAD
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
+=======
+    "@radix-ui/react-label": "^2.1.0",
+    "@radix-ui/react-separator": "^1.1.0",
+    "@radix-ui/react-slot": "^1.1.0",
+>>>>>>> 027cb341a1953a8d66191fd0fdb1e22bdf9df812
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.396.0",
@@ -20,7 +26,11 @@
     "next-auth": "^4.24.7",
     "react": "^18",
     "react-dom": "^18",
+<<<<<<< HEAD
     "react-toastify": "^10.0.5",
+=======
+    "react-hook-form": "^7.52.0",
+>>>>>>> 027cb341a1953a8d66191fd0fdb1e22bdf9df812
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7"
   },
