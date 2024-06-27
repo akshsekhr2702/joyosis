@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 import Login from "../components/Login";
 
 export default function LoginPage() {
-    const { register, handleSubmit, reset} = useForm()
+    // const { register, handleSubmit, reset} = useForm()
     const [containerClass, setContainerClass] = useState('');
 
     const handleRegisterClick = () => {
@@ -19,7 +19,8 @@ export default function LoginPage() {
     };
 
     return (
-        <div className={`container ${containerClass}`} id="container">
+        <div className="back-style">
+        <div className={`custom-container ${containerClass}`} id="container">
             <div className="form-container sign-up">
             <Register />
             </div>
@@ -40,6 +41,7 @@ export default function LoginPage() {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     );
 };
