@@ -2,11 +2,12 @@
 import React,{useState} from 'react'
 import { Button } from '../ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card'
-import { Bell, Home, LineChart, LogOut, MessageCircle, Package, Package2, ShoppingCart, User2Icon, Users } from 'lucide-react'
+import { BadgePlus, Bell, Blend, Home, LineChart, LogOut, MessageCircle, Package, Package2, ShoppingCart, User2Icon, Users } from 'lucide-react'
 import Link from 'next/link'
 import { Badge } from '../ui/badge'
 import { ModeToggle } from '../Mode-toggle'
 import { useRouter } from 'next/navigation'
+import { AddPost } from '@/app/homepage/Addpost'
 
 const Sidebar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -14,10 +15,16 @@ const Sidebar = () => {
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
-  const router = useRouter()
- const handleVideoClick = function() {
-  router.push("/room/1")
- }
+
+  const router = useRouter();
+
+  const handleVideoClick = () => {
+    router.push("/room/1");
+  };
+
+  const handleEventsClick = () => {
+    router.push("/room/1");
+  };
 
   return (
     <div className='w-96 border-r-2 h-dvh fixed left-0 top-0 bottom-0'>
@@ -28,7 +35,6 @@ const Sidebar = () => {
               <span className="">Joyosis</span>
             </Link>
             <ModeToggle />
-           
           </div>
           <div className="flex-1">
             <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
@@ -46,14 +52,12 @@ const Sidebar = () => {
                 <Home className="h-4 w-4" />
                 Home
               </Link>
-              
               <Link
                 href="#"
                 className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
               >
                 <MessageCircle className="h-4 w-4" />
                 Chat
-                
               </Link>
               {/* <Link
                 href="#"
@@ -63,27 +67,35 @@ const Sidebar = () => {
                 Account{" "}
               </Link> */}
               <div className="relative">
-              <button
-                onClick={toggleDropdown}
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary w-full text-left"
+                <button
+                  onClick={toggleDropdown}
+                  className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary w-full text-left"
+                >
+                  <MessageCircle className="h-4 w-4" />
+                  Activities
+                </button>
+                {isDropdownOpen && (
+                  <ul className="dropdown-menu">
+                    <li className="dropdown-item">Memory Game</li>
+                    <li className="dropdown-item">3 Cups 1 Ball</li>
+                    {/* Add more items as needed */}
+                  </ul>
+                )}
+              </div>
+              <Link
+                href="#"
+                onClick={handleEventsClick}
+                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
               >
-                <MessageCircle className="h-4 w-4" />
-                Activities
-              </button>
-              {isDropdownOpen && (
-                <ul className="dropdown-menu">
-                  <li className="dropdown-item">Memory Game</li>
-                  <li className="dropdown-item">3 Cups 1 Ball</li>
-                  {/* Add more items as needed */}
-                </ul>
-              )}
-            </div>
+                <BadgePlus/>
+                Events  
+              </Link>
               <Link
                 href="#"
                 className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
               >
-                <LineChart className="h-4 w-4" />
-                Events  
+                <Blend className="h-4 w-4" />
+                <AddPost />  
               </Link>
               <Link
                 href="#"
@@ -95,17 +107,19 @@ const Sidebar = () => {
             </nav>
           </div>
           <div className='flex items-center justify-start px-5 py-5 gap-[185px]'>
-            <Button>
-            <LogOut />LogOut
-            </Button>
-            <Button onClick = {handleVideoClick}>
+            <Link href={'/login'}>
+              <Button>
+                <LogOut />LogOut
+              </Button>
+            </Link>
+            <Button onClick={handleVideoClick}>
               Video
             </Button>
           </div>
-          
         </div>
     </div>
   )
 }
 
 export default Sidebar
+  

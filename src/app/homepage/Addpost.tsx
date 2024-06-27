@@ -10,12 +10,13 @@ import {
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import Link from "next/link"
  
 export function AddPost() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Edit Profile</Button>
+        <Link href={'/'}>Create Post</Link>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
@@ -27,13 +28,9 @@ export function AddPost() {
         <div className="grid gap-4 py-4">
           <div className="grid grid-cols-4 items-center gap-4">
             <Label htmlFor="name" className="text-right">
-              Create Post
+              Enter your file
             </Label>
-            <Input
-              id="name"
-              type="file"
-              className="col-span-3"
-            />
+           <Input placeholder="Enter your file" type="file" />
           </div>
           <div className="grid grid-cols-4 items-center gap-4">
             <Label htmlFor="username" className="text-right">
@@ -48,7 +45,7 @@ export function AddPost() {
           </div>
         </div>
         <DialogFooter>
-          <Button type="submit">Save changes</Button>
+          <Button  type="submit">Create Post</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>

@@ -50,7 +50,7 @@ export default function Login(){
                         {...register("password")}
                         placeholder="Password"
                     />
-                    {/* <a href="#">Forget Your Password?</a> */}
+                
                     <button className="bg-blue-600" type="submit">Sign In</button>
                 </form>
         </>

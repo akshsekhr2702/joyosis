@@ -6,7 +6,6 @@ import { AddPost } from './Addpost'
 const page = () => {
   return (
     <div className='flex flex-col'>
-       <AddPost />
         <Posts />
     </div>
   )
